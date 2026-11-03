@@ -3,6 +3,8 @@ export const routes = {
   blog: "/blog/",
   about: "/about/",
   partners: "/partners/",
+  offline: "/offline/",
+  serviceWorker: "/sw.js",
   rss: "/rss.xml",
   defaultOgImage: "/og.png",
   logo: "/logo.png",
