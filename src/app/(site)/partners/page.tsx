@@ -1,11 +1,13 @@
 import {
   CalendarDays,
   CheckCircle2,
+  Globe,
   Languages,
   Mail,
   Newspaper,
   PenLine,
   Sparkles,
+  Wrench,
 } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -54,6 +56,21 @@ const formats = [
   },
 ];
 
+const websiteServices = [
+  {
+    icon: Globe,
+    title: "Կայք զրոյից",
+    text: "Դիզայնից մինչև գործարկում, ձեր բիզնեսի կարիքներին համապատասխան։",
+    tint: "bg-brand-violet/12 text-brand-violet",
+  },
+  {
+    icon: Wrench,
+    title: "Ուղղումներ և բարելավումներ",
+    text: "Կշտկենք սխալները, կարագացնենք կայքը, կդարձնենք այն հարմար հեռախոսով օգտվելու համար և կավելացնենք նոր բաժիններ։",
+    tint: "bg-brand-emerald/15 text-brand-emerald",
+  },
+];
+
 const principles = [
   "Հովանավորված նյութերը միշտ նշվում են «Գովազդ» նշիչով։",
   "Հրապարակում եմ միայն ստուգված տեղեկություն։",
@@ -61,9 +78,10 @@ const principles = [
 ];
 
 const { email, telegram } = siteConfig.contact;
-const emailHref = `mailto:${email}?subject=${encodeURIComponent(
-  "Համագործակցություն Parz Tech-ի հետ",
-)}`;
+const mailtoHref = (subject: string) =>
+  `mailto:${email}?subject=${encodeURIComponent(subject)}`;
+const partnershipEmailHref = mailtoHref("Համագործակցություն Parz Tech-ի հետ");
+const websiteOrderEmailHref = mailtoHref("Կայքի պատվեր");
 
 // Wraps instead of overflowing on the narrowest phones (long label, unbreakable email)
 const emailButtonClass = cn(
@@ -89,7 +107,7 @@ export default function PartnersPage() {
             կամ միջոցառումը ուզում է հասնել այս լսարանին, ուրախ կլինեմ
             համագործակցել։
           </p>
-          <a href={emailHref} className={emailButtonClass}>
+          <a href={partnershipEmailHref} className={emailButtonClass}>
             <Mail />
             Առաջարկել համագործակցություն
           </a>
@@ -127,6 +145,24 @@ export default function PartnersPage() {
 
         <section className="mt-20">
           <SectionHeading
+            title="Կայքերի պատրաստում"
+            description="Նոր կայքի կարիք ունե՞ք, թե՞ ուզում եք բարելավել եղածը։ ParzTech-ը կարող է օգնել։"
+          />
+          <div className="grid gap-6 sm:grid-cols-2">
+            {websiteServices.map((service) => (
+              <FeatureCard key={service.title} {...service} />
+            ))}
+          </div>
+          <div className="mt-8 text-center">
+            <a href={websiteOrderEmailHref} className={emailButtonClass}>
+              <Mail />
+              Պատվիրել
+            </a>
+          </div>
+        </section>
+
+        <section className="mt-20">
+          <SectionHeading
             eyebrow="Վստահություն"
             title="Իմ կանոնները"
             description="Ընթերցողների վստահությունը Parz Tech-ի ամենաարժեքավոր բանն է, և այն պահպանելու համար գործում են այս կանոնները։"
@@ -159,7 +195,7 @@ export default function PartnersPage() {
             ձևաչափը։
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <a href={emailHref} className={emailButtonClass}>
+            <a href={partnershipEmailHref} className={emailButtonClass}>
               <Mail />
               {email}
             </a>
