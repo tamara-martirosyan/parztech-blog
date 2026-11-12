@@ -40,12 +40,27 @@ function rehypeCollectHeadings() {
   };
 }
 
+const SAME_TAB_HREF = /^(#|mailto:|tel:)/i;
+
+function rehypeLinksNewTab() {
+  return (tree: Root) => {
+    visit(tree, "element", (node) => {
+      if (node.tagName !== "a") return;
+      const href = String(node.properties.href ?? "");
+      if (!href || SAME_TAB_HREF.test(href)) return;
+      node.properties.target = "_blank";
+      node.properties.rel = ["noopener", "noreferrer"];
+    });
+  };
+}
+
 // Raw HTML in markdown is dropped (remark-rehype default), so output is safe to inject
 const processor = unified()
   .use(remarkParse)
   .use(remarkGfm)
   .use(remarkRehype)
   .use(rehypeSlug)
+  .use(rehypeLinksNewTab)
   .use(rehypeCollectHeadings)
   .use(rehypePrettyCode, {
     theme: { light: "github-light", dark: "github-dark-dimmed" },
