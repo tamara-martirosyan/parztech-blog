@@ -8,7 +8,7 @@ type PageMetadataInput = {
   title: string;
   description: string;
   path: string;
-  /** Use the title as-is instead of the "%s | Parz Tech" template */
+  /** Use the title as-is instead of the "%s | ParzTech" template */
   absoluteTitle?: boolean;
   /** Social preview image path; defaults to the site-wide card */
   image?: string;

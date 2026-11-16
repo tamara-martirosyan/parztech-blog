@@ -25,7 +25,7 @@ import { routes } from "@/lib/routes";
 export const metadata: Metadata = pageMetadata({
   title: "Համագործակցություն",
   description:
-    "Համագործակցեք Parz Tech-ի հետ՝ հովանավորություն, միջոցառումների մեդիա-գործընկերություն, հովանավորված հոդվածներ և հայերեն տեխնոլոգիական տեքստեր։",
+    "Համագործակցեք ParzTech-ի հետ՝ հովանավորություն, միջոցառումների մեդիա-գործընկերություն, հովանավորված հոդվածներ և հայերեն տեխնոլոգիական տեքստեր։",
   path: routes.partners,
 });
 
@@ -45,7 +45,7 @@ const formats = [
   {
     icon: PenLine,
     title: "Հովանավորված հոդված",
-    text: "Հոդված ձեր արտադրանքի, ծառայության կամ նախաձեռնության մասին՝ գրված պարզ ու հասկանալի, Parz Tech-ի ոճով։",
+    text: "Հոդված ձեր արտադրանքի, ծառայության կամ նախաձեռնության մասին՝ գրված պարզ ու հասկանալի, ParzTech-ի ոճով։",
     tint: "bg-brand-apricot/18 text-brand-apricot",
   },
   {
@@ -80,7 +80,7 @@ const principles = [
 const { email, telegram } = siteConfig.contact;
 const mailtoHref = (subject: string) =>
   `mailto:${email}?subject=${encodeURIComponent(subject)}`;
-const partnershipEmailHref = mailtoHref("Համագործակցություն Parz Tech-ի հետ");
+const partnershipEmailHref = mailtoHref("Համագործակցություն ParzTech-ի հետ");
 const websiteOrderEmailHref = mailtoHref("Կայքի պատվեր");
 
 // Wraps instead of overflowing on the narrowest phones (long label, unbreakable email)
@@ -121,7 +121,7 @@ export default function PartnersPage() {
                 <Sparkles className="size-5" />
               </div>
               <p className="leading-relaxed text-muted-foreground">
-                Parz Tech-ի ընթերցողները հետաքրքրասեր մարդիկ են, ովքեր ուզում են
+                ParzTech-ի ընթերցողները հետաքրքրասեր մարդիկ են, ովքեր ուզում են
                 հասկանալ տեխնոլոգիաները՝ առանց բարդ տերմինների։ Բլոգը նոր է և
                 արագ աճում է. ամսական ընթերցողների և Telegram բաժանորդների թվերը
                 կհրապարակեմ այստեղ, հենց վիճակագրությունը կուտակվի։
@@ -165,7 +165,7 @@ export default function PartnersPage() {
           <SectionHeading
             eyebrow="Վստահություն"
             title="Իմ կանոնները"
-            description="Ընթերցողների վստահությունը Parz Tech-ի ամենաարժեքավոր բանն է, և այն պահպանելու համար գործում են այս կանոնները։"
+            description="Ընթերցողների վստահությունը ParzTech-ի ամենաարժեքավոր բանն է, և այն պահպանելու համար գործում են այս կանոնները։"
           />
           <ul className="space-y-3">
             {principles.map((principle) => (

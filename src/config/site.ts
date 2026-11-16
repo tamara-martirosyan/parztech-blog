@@ -1,10 +1,10 @@
 import { routes } from "@/lib/routes";
 
 export const siteConfig = {
-  name: "Parz Tech",
+  name: "ParzTech",
   tagline: "Տեխնոլոգիաներ և ՍԻ (արհեստական բանականություն)՝ պարզ լեզվով",
   description:
-    "Parz Tech-ը հայալեզու բլոգ է տեխնոլոգիաների և արհեստական բանականության (ՍԻ) մասին՝ բացատրված պարզ ու հասկանալի։",
+    "ParzTech-ը հայալեզու բլոգ է տեխնոլոգիաների և արհեստական բանականության (ՍԻ) մասին՝ բացատրված պարզ ու հասկանալի։",
   alternateNames: ["Parz", "ParzTech", "Պարզ", "Պարզ Թեք"],
   locale: "hy_AM",
   themeColor: { light: "#fbfbfe", dark: "#090913" },

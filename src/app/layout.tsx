@@ -35,6 +35,8 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
   },
   twitter: { card: "summary_large_image" },
+  // Allow large image previews in Google Search / Discover
+  robots: { "max-image-preview": "large" },
   // Google Search Console ownership check (HTML tag method)
   ...(process.env.GOOGLE_SITE_VERIFICATION && {
     verification: { google: process.env.GOOGLE_SITE_VERIFICATION },

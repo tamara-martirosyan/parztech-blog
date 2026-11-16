@@ -18,7 +18,7 @@ import { routes } from "@/lib/routes";
 export const metadata: Metadata = pageMetadata({
   title: "Իմ մասին",
   description:
-    "Ով եմ ես և ինչու եմ ստեղծել Parz Tech-ը՝ հայալեզու բլոգ տեխնոլոգիաների և արհեստական բանականության (ՍԻ) մասին։",
+    "Ով եմ ես և ինչու եմ ստեղծել ParzTech-ը՝ հայալեզու բլոգ տեխնոլոգիաների և արհեստական բանականության (ՍԻ) մասին։",
   path: routes.about,
 });
 
